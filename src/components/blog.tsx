@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface BlogData {
-  title:string;
-  content:string;
-  image:string;
+  title: string;
+  content: string;
+  image: string;
 }
 
 export const Blog = () => {
-  const blogData:BlogData[] = [
+  const blogData: BlogData[] = [
     {
       title: "How to make web templates",
       content:
@@ -18,40 +18,35 @@ export const Blog = () => {
       image: "/assests/blog/1.png",
     },
     {
-        title: "Make Business card",
-        content:
-          "Photo booth fam kinfolk cold-pressed sriracha leggingsjianbing microdosing tousled waistcoat.",
-        image: "/assests/blog/2.png",
-      },
-      {
-        title: "How to make Flyer Design",
-        content:
-          "Photo booth fam kinfolk cold-pressed sriracha leggingsjianbing microdosing tousled waistcoat.",
-        image: "/assests/blog/3.png",
-      },
+      title: "Make Business card",
+      content:
+        "Photo booth fam kinfolk cold-pressed sriracha leggingsjianbing microdosing tousled waistcoat.",
+      image: "/assests/blog/2.png",
+    },
+    {
+      title: "How to make Flyer Design",
+      content:
+        "Photo booth fam kinfolk cold-pressed sriracha leggingsjianbing microdosing tousled waistcoat.",
+      image: "/assests/blog/3.png",
+    },
   ];
   return (
     <LayoutWrapper>
-        
-       
       <section className=" body-font  mb-20 pt-16" id="blogs">
-      <div className="flex flex-col text-center w-full mb-16"  >
-            <h1
-              className="text-textColor font-bold text-5xl text-center "
-            
-            >
-             Blogs
-            </h1>
-            {/* Project description tag is commit */}
-            {/* <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+        <div className="flex flex-col text-center w-full mb-16">
+          <h1 className="text-textColor font-bold text-5xl text-center ">
+            Blogs
+          </h1>
+          {/* Project description tag is commit */}
+          {/* <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
               Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
               gentrify, subway tile poke farm-to-table. Franzen you probably
               haven't heard of them man bun deep jianbing selfies heirloom.
             </p> */}
-          </div>
+        </div>
         <div className="mx-auto">
           <div className="flex flex-wrap -m-4">
-            {blogData.map((blog:BlogData, i:number) => {
+            {blogData.map((blog: BlogData, i: number) => {
               return (
                 <div className="p-4  md:w-1/3 relative " key={i}>
                   <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden bg-white">
@@ -76,13 +71,13 @@ export const Blog = () => {
                       </p>
                       <div className="flex items-center flex-wrap md:absolute md:bottom-[30px] bg-white">
                         <Link
-                        target="_blank"
+                          target="_blank"
                           href={""}
                           className="text-mainColor text-[18px] font-medium inline-flex items-center md:mb-2 lg:mb-0"
                         >
                           <span className="hover:underline underline-offset-4 decoration-2 decoration-black">
                             Learn More
-                            </span>
+                          </span>
                           <IoMdArrowForward
                             className="ml-2 font-bold"
                             size={18}

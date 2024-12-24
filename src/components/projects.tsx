@@ -37,7 +37,6 @@ export const Projects = () => {
                projectImage
          }`;
       const data = await client.fetch(query);
-      console.log(urlFor(data[0].projectImage).width(200).url());
       setProjects(data);
       return data;
     }
