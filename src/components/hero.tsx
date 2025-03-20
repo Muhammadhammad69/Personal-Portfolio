@@ -46,6 +46,7 @@ export const HeroSection = () => {
                   Contact
                 </button>
               </Link>
+              <a href="/assests/resume/Resume.pdf" download>
               <button
                 className="mt-4 xs:mt-0 xs:ml-4 px-4 py-2 rounded-lg  bg-mainColor text-black font-medium flex items-center gap-x-2 hover:font-bold stroke-[3] d-btn justify-self-center transition-all hover:translate-y-1"
                 onMouseEnter={() => {
@@ -63,6 +64,7 @@ export const HeroSection = () => {
                   className=""
                 />
               </button>
+              </a>
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 rounded-full justify-self-end">

@@ -1,10 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { LayoutWrapper } from "./layoutWrapper";
 import Image from "next/image";
-
-import { client } from "@/components/utils/sanityConfig";
-import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import { IoMdArrowForward } from "react-icons/io";
 
@@ -12,43 +8,44 @@ interface ProjectData {
   subtitle: string;
   projectContent: string;
   title: string;
-  projectUrl: string;
+  url: string;
   _id: number;
   altText: string;
-  projectImage: any;
+  projectImage: string;
 }
-const builder = imageUrlBuilder(client);
-function urlFor(source: any) {
-  return builder.image(source);
-}
+
+
 
 export const Projects = () => {
-  const [projects, setProjects] = useState<ProjectData[]>([]);
+  // const [projects, setProjects] = useState<ProjectData[]>([]);
+  const projects: ProjectData[] = [{
+    subtitle: "Project 01",
+    title: "e-commerce-website",
+    _id: 1,
+    projectContent: "This is Dynamic ecommerce website",
+    url: "https://dynamic-shopping-website.vercel.app/",
+    altText: "e-commerce",
+    projectImage: "/assests/projects/shopping-website.png",
 
-  useEffect(() => {
-    async function fetchData() {
-      const query = `*[_type == 'portfolioProjects']{
-               _id,
-               title,
-              subtitle,
-              projectContent,
-               projectUrl,
-              "altText": projectImage.altText,
-               projectImage
-         }`;
-      const data = await client.fetch(query);
-      setProjects(data);
-      return data;
-    }
-    fetchData();
-  }, []);
+  },
+  {
+    subtitle: "Project 02",
+    title: "Resume Builder",
+    _id: 2,
+    projectContent: "This is dynamic Resume Builder",
+   url: "https://resume-builder-comp.vercel.app/",
+    altText: "resume-builder",
+    projectImage: "/assests/projects/resume-builder.png",
+  }
+]
+
 
   return (
     <LayoutWrapper>
       <section className=" body-font mb-5" id="projects">
         <div className="  pt-20 pb-16 mx-auto">
           <div className="flex flex-col text-center w-full mb-16">
-            <h1 className="text-textColor font-bold text-5xl text-center ">
+            <h1 className="text-textColor font-bold text-4xl sm:text-5xl text-center ">
               My Projects
             </h1>
             {/* Project description tag is commit */}
@@ -66,7 +63,7 @@ export const Projects = () => {
                     <Image
                       alt={project.altText}
                       className="absolute inset-0 w-full h-full object-cover object-center "
-                      src={urlFor(project.projectImage).url()}
+                      src={project.projectImage}
                       width={2000}
                       height={2000}
                     />
@@ -82,7 +79,7 @@ export const Projects = () => {
                       </p>
                       <Link
                         target="_blank"
-                        href={project.projectUrl}
+                        href={project.url}
                         className="text-mainColor text-[18px] font-medium inline-flex items-center mt-2 "
                       >
                         <span className="hover:underline underline-offset-4 decoration-2 decoration-black">

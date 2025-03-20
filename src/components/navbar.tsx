@@ -1,5 +1,5 @@
 "use client";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, CloudDownload } from "lucide-react";
 import Link from "next/link";
 
@@ -10,25 +10,23 @@ export const Navbar = () => {
     setIsOpen(!isOpen);
   };
   const [isHover, setIsHover] = useState(false);
-  useEffect(()=>{
-
-  
-  if (isHover) {
-    const btn = document
-      .querySelector("#download")
-      ?.classList.add("stroke-[2.5]");
-    const btn2 = document
-      .querySelector("#download1")
-      ?.classList.add("stroke-[2.5]");
-  } else if (!isHover) {
-    const btn = document
-      .querySelector("#download")
-      ?.classList.remove("stroke-[2.5]");
-    const btn3 = document
-      .querySelector("#download1")
-      ?.classList.remove("stroke-[2.5]");
-  }
-},[isHover])
+  useEffect(() => {
+    if (isHover) {
+      const btn = document
+        .querySelector("#download")
+        ?.classList.add("stroke-[2.5]");
+      const btn2 = document
+        .querySelector("#download1")
+        ?.classList.add("stroke-[2.5]");
+    } else if (!isHover) {
+      const btn = document
+        .querySelector("#download")
+        ?.classList.remove("stroke-[2.5]");
+      const btn3 = document
+        .querySelector("#download1")
+        ?.classList.remove("stroke-[2.5]");
+    }
+  }, [isHover]);
   return (
     <div className="w-[95%] 2xl:w-[1400px] mx-auto z-50 sticky top-0 bg-white rounded-bl-lg rounded-br-lg">
       <nav className="bg-white px-3 rounded-bl-lg rounded-br-lg font-medium text-textColor ">
@@ -59,6 +57,7 @@ export const Navbar = () => {
                 Contact
               </Link>
             </div>
+            <a href="/assests/resume/Resume.pdf" download>
             <button
               className="px-4 py-2 rounded-lg   bg-mainColor text-black font-medium  items-center gap-x-2 hover:font-bold stroke-[3] d-btn hidden md:flex"
               onMouseEnter={() => {
@@ -76,6 +75,7 @@ export const Navbar = () => {
                 className=""
               />
             </button>
+            </a>
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
               <button
@@ -131,6 +131,7 @@ export const Navbar = () => {
               >
                 Contact
               </Link>
+              <a href="/assests/resume/Resume.pdf" download>
               <button
                 className="px-4 py-2 rounded-lg bg-mainColor text-black font-medium flex items-center gap-x-2 hover:font-bold stroke-[3] d-btn justify-self-center"
                 onMouseEnter={() => {
@@ -140,7 +141,9 @@ export const Navbar = () => {
                   setIsHover(false);
                 }}
               >
-                <span>Download Resume</span>
+                <span>
+                  Download Resume
+                </span>
                 <CloudDownload
                   id="download1"
                   strokeWidth={1.5}
@@ -148,6 +151,7 @@ export const Navbar = () => {
                   className=""
                 />
               </button>
+              </a>
             </div>
           </div>
         )}

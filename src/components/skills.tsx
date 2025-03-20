@@ -34,7 +34,7 @@ export const Skills = () => {
       <section className="text-gray-600 body-font" id="skills">
         <div className="  pb-20 pt-16 mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-textColor font-bold text-5xl text-center ">
+            <h1 className="text-textColor font-bold text-4xl sm:text-5xl text-center ">
               Skills
             </h1>
 

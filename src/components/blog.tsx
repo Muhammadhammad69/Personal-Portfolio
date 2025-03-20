@@ -34,7 +34,7 @@ export const Blog = () => {
     <LayoutWrapper>
       <section className=" body-font  mb-20 pt-16" id="blogs">
         <div className="flex flex-col text-center w-full mb-16">
-          <h1 className="text-textColor font-bold text-5xl text-center ">
+          <h1 className="text-textColor font-bold text-4xl sm:text-5xl text-center ">
             Blogs
           </h1>
           {/* Project description tag is commit */}
