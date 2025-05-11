@@ -31,12 +31,12 @@ export const Contact = () => {
                   EMAIL
                 </h2>
                 <a className=" leading-relaxed">
-                  Hammad@email.com
+                  muhammadhammad3379@gmail.com
                 </a>
                 <h2 className="title-font font-semibold text-textColor tracking-widest text-sm mt-4">
                   PHONE
                 </h2>
-                <p className="leading-relaxed">0311-XXXXXXX</p>
+                <p className="leading-relaxed">0319-8382269</p>
               </div>
             </div>
           </div>

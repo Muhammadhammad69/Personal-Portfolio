@@ -17,7 +17,7 @@ interface ProjectData {
 
 
 export const Projects = () => {
-  // const [projects, setProjects] = useState<ProjectData[]>([]);
+  
   const projects: ProjectData[] = [{
     subtitle: "Project 01",
     title: "e-commerce-website",
@@ -33,7 +33,7 @@ export const Projects = () => {
     title: "Resume Builder",
     _id: 2,
     projectContent: "This is dynamic Resume Builder",
-   url: "https://resume-builder-comp.vercel.app/",
+    url: "https://resume-builder-comp.vercel.app/",
     altText: "resume-builder",
     projectImage: "/assests/projects/resume-builder.png",
   }
