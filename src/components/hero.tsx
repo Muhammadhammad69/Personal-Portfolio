@@ -42,29 +42,21 @@ export const HeroSection = () => {
             </p>
             <div className="flex flex-col xs:flex-row justify-center">
               <Link href={"#contact"} className="self-center xs:self-start">
-                <button className="cursor-pointer flex items-center px-6 py-2 rounded-lg  bg-mainColor text-black font-medium hover:font-bold transition-all duration-300
+                <button className="cursor-pointer flex items-center px-6 py-2 rounded-lg  bg-mainColor text-black font-medium  transition-all duration-300
                 ease-in-out hover:translate-y-1">
                   Contact
                 </button>
               </Link>
-              <a href="/assests/resume/Resume.pdf" download>
-              <button
-                className="cursor-pointer mt-4 xs:mt-0 xs:ml-4 px-4 py-2 rounded-lg  bg-mainColor text-black font-medium flex items-center gap-x-2 hover:font-bold stroke-3 d-btn justify-self-center transition-all duration-300 ease-in-out hover:translate-y-1"
-                onMouseEnter={() => {
-                  setIsHover(true);
-                }}
-                onMouseLeave={() => {
-                  setIsHover(false);
-                }}
-              >
+              <a href="/assests/resume/Resume.pdf" className="group cursor-pointer mt-4 xs:mt-0 xs:ml-4 px-4 py-2 rounded-lg  bg-mainColor text-black font-medium flex items-center gap-x-2   justify-self-center transition-all duration-300 ease-in-out hover:translate-y-1" download>
+              
                 <span>Download Resume</span>
                 <CloudDownload
                   id="download2"
                   strokeWidth={1.5}
                   size={20}
-                  className=""
+                  className="group-hover:stroke-2"
                 />
-              </button>
+             
               </a>
             </div>
           </div>
@@ -72,7 +64,7 @@ export const HeroSection = () => {
             <Image
               className="object-cover object-center rounded-full w-100 mx-auto md:mx-0 md:ml-auto "
               alt="hero"
-              src="assests/profile/3d-avatar-cartoon-character_113255-103130.jpg"
+              src="/assests/profile/3d-avatar-cartoon-character_113255-103130.jpg"
               width={600}
               height={600}
               priority

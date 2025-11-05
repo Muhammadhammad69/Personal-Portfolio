@@ -35,7 +35,7 @@ export const Footer = () => {
             </a>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start" >
-            <Link href={""} className="bg-mainColor2 hover:bg-mainColor text-mainColor3 hover:text-black px-2 py-2 rounded-full transition-all duration-300 ease-in-out" data-aos="fade-up">
+            <Link href={""} className="bg-mainColor2 hover:bg-mainColor text-mainColor3 hover:text-black px-2 py-2 rounded-full transition-all duration-300 ease-in-out" >
               <FaFacebookF className="" size={20} />
             </Link>
             <Link

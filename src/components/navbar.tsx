@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHover, setIsHover] = useState(false);
+  
   const navigationItems = [
     {
       id: 1,
@@ -31,37 +31,16 @@ export const Navbar = () => {
       id: 5,
       title: "Contact",
       href: "#contact",
-    },
-    {
-      id: 6,
-      title: "Check",
-      href: "/check",
-    },
+    }
   ];
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  useEffect(() => {
-    if (isHover) {
-      document
-        .querySelector("#download")
-        ?.classList.add("stroke-[2.5]");
-      document
-        .querySelector("#download1")
-        ?.classList.add("stroke-[2.5]");
-    } else if (!isHover) {
-      document
-        .querySelector("#download")
-        ?.classList.remove("stroke-[2.5]");
-      document
-        .querySelector("#download1")
-        ?.classList.remove("stroke-[2.5]");
-    }
-  }, [isHover]);
+ 
   return (
     <div className="w-[95%] 2xl:w-[1400px] mx-auto z-50 sticky top-0 bg-white rounded-bl-lg rounded-br-lg">
       <nav className="bg-white px-3 rounded-bl-lg rounded-br-lg font-medium text-textColor ">
-        <div className="">
+        <div className="z-50">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center">
@@ -81,40 +60,18 @@ export const Navbar = () => {
                   {item.title}
                 </Link>
               ))}
-              {/* <Link href={"#projects"} className=" hover:text-mainColor transition-all ease-in-out duration-300">
-                Projects
-              </Link>
-              <Link href={"#skills"} className=" hover:text-mainColor transition-all ease-in-out duration-300">
-                Skills
-              </Link>
-              <Link href={"#blogs"} className=" hover:text-mainColor transition-all ease-in-out duration-300">
-                Blog
-              </Link>
-              <Link href={"#contact"} className=" hover:text-mainColor transition-all ease-in-out duration-300">
-                Contact
-              </Link>
-              <Link href={"/check"}>
-              Check
-              </Link> */}
+             
             </div>
-            <a href="/assests/resume/Resume.pdf" download>
-              <button
-                className="cursor-pointer transition-all ease-in-out duration-500 px-4 py-2 rounded-lg   bg-mainColor text-black font-medium  items-center gap-x-2 hover:font-bold stroke-3  d-btn hidden md:flex"
-                onMouseEnter={() => {
-                  setIsHover(true);
-                }}
-                onMouseLeave={() => {
-                  setIsHover(false);
-                }}
-              >
+            <a href="/assests/resume/Resume.pdf" className="group cursor-pointer transition-all duration-500 ease-in-out px-4 py-2 rounded-lg   bg-mainColor text-black font-medium  items-center gap-x-2    hidden md:flex hover:scale-105 " download>
+              
                 <span>Download Resume</span>
                 <CloudDownload
                   id="download"
                   strokeWidth={1.5}
                   size={20}
-                  className=""
+                  className="group-hover:stroke-2"
                 />
-              </button>
+             
             </a>
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
@@ -133,8 +90,8 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden">
+        {/* {isOpen && ( */}
+          <div className={`absolute w-full transition-all ease-in-out duration-500  bg-white md:hidden ${isOpen ? "translate-y-0" : "-translate-y-full top-0 left-0"}   `}>
             <div className="  pt-2 pb-3 space-y-2 bg-white text-textColor">
               <Link
                 href="/"
@@ -171,28 +128,21 @@ export const Navbar = () => {
               >
                 Contact
               </Link>
-              <a href="/assests/resume/Resume.pdf" download>
-                <button
-                  className="px-4 py-2 rounded-lg bg-mainColor text-black font-medium flex items-center gap-x-2 hover:font-bold stroke-[3] d-btn justify-self-center"
-                  onMouseEnter={() => {
-                    setIsHover(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHover(false);
-                  }}
-                >
+               
+              <a href="/assests/resume/Resume.pdf" className="group cursor-pointer transition-all duration-500 ease-in-out px-4 py-2 rounded-lg bg-mainColor text-black font-medium flex items-center gap-x-2 hover:font-bold ] d-btn justify-self-center hover:scale-105" download>
+               
                   <span>Download Resume</span>
                   <CloudDownload
                     id="download1"
                     strokeWidth={1.5}
                     size={20}
-                    className=""
+                    className="group-hover:stroke-2"
                   />
-                </button>
+                
               </a>
             </div>
           </div>
-        )}
+        {/* )} */}
       </nav>
     </div>
   );
