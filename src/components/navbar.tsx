@@ -43,17 +43,17 @@ export const Navbar = () => {
   };
   useEffect(() => {
     if (isHover) {
-      const btn = document
+      document
         .querySelector("#download")
         ?.classList.add("stroke-[2.5]");
-      const btn2 = document
+      document
         .querySelector("#download1")
         ?.classList.add("stroke-[2.5]");
     } else if (!isHover) {
-      const btn = document
+      document
         .querySelector("#download")
         ?.classList.remove("stroke-[2.5]");
-      const btn3 = document
+      document
         .querySelector("#download1")
         ?.classList.remove("stroke-[2.5]");
     }

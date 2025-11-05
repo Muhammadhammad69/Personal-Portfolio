@@ -72,7 +72,7 @@ export const HeroSection = () => {
             <Image
               className="object-cover object-center rounded-full w-100 mx-auto md:mx-0 md:ml-auto "
               alt="hero"
-              src={require("../../public/assests/profile/3d-avatar-cartoon-character_113255-103130.jpg")}
+              src="assests/profile/3d-avatar-cartoon-character_113255-103130.jpg"
               width={600}
               height={600}
               priority
