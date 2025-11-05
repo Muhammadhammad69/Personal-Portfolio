@@ -1,5 +1,4 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import { CloudDownload } from "lucide-react";
 import { LayoutWrapper } from "./layoutWrapper";
 import Image from "next/image";
@@ -7,16 +6,6 @@ import Typewriter from "typewriter-effect";
 import Link from "next/link";
 
 export const HeroSection = () => {
-  const [isHover, setIsHover] = useState(false);
-  useEffect(() => {
-    if (isHover) {
-      const btn = document.querySelector("#download2");
-      btn?.classList.add("stroke-[2.5]");
-    } else if (!isHover) {
-      const btn = document.querySelector("#download2");
-      btn?.classList.remove("stroke-[2.5]");
-    }
-  }, [isHover]);
 
   return (
     <LayoutWrapper>
