@@ -14,56 +14,65 @@ interface ProjectData {
   projectImage: string;
 }
 
-
-
 export const Projects = () => {
-  
-  const projects: ProjectData[] = [{
-    subtitle: "Project 01",
-    title: "e-commerce-website",
-    _id: 1,
-    projectContent: "Dynamic ecommerce website",
-    url: "https://dynamic-shopping-website.vercel.app/",
-    altText: "e-commerce",
-    projectImage: "/assests/projects/shopping-website.png",
+  const projects: ProjectData[] = [
+    {
+      subtitle: "Project 01 (Wordpress)",
+      title: "WishBazaar – Dynamic E-commerce Website (WordPress)",
+      _id: 1,
+      projectContent:
+        "WordPress WooCommerce site with custom storefront features.",
+      url: "https://wishbazaar.store/",
+      altText: "e-commerce",
+      projectImage: "/assests/projects/wish.png",
+    },
+    {
+      subtitle: "Project 02",
+      title: "e-commerce-website",
+      _id: 1,
+      projectContent: "Dynamic ecommerce website",
+      url: "https://dynamic-shopping-website.vercel.app/",
+      altText: "e-commerce",
+      projectImage: "/assests/projects/shopping-website.png",
+    },
+    {
+      subtitle: "Project 03",
+      title: "Humace Template",
+      _id: 2,
+      projectContent: "Humace Template Clone",
+      url: "https://humace-template-io.vercel.app/",
+      altText: "humace-template",
+      projectImage: "/assests/projects/humace-template-clone.png",
+    },
+    {
+      subtitle: "Project 04",
+      title: "Glace Template",
+      _id: 3,
+      projectContent: "Glace Template Clone",
+      url: "https://glace-template-clone.vercel.app/",
+      altText: "glace-template",
+      projectImage: "/assests/projects/glace-template-clone.png",
+    },
 
-  },
-  {
-    subtitle: "Project 02",
-    title: "Humace Template",
-    _id: 2,
-    projectContent: "Humace Template Clone",
-    url: "https://humace-template-io.vercel.app/",
-    altText: "humace-template",
-    projectImage: "/assests/projects/humace-template-clone.png",
-  },
-  {
-    subtitle: "Project 03",
-    title: "Glace Template",
-    _id: 3,
-    projectContent: "Glace Template Clone",
-    url: "https://glace-template-clone.vercel.app/",
-    altText: "glace-template",
-    projectImage: "/assests/projects/glace-template-clone.png",
-  },
-  
-  {
-    subtitle: "Project 04",
-    title: "Resume Builder",
-    _id: 4,
-    projectContent: "Dynamic Resume Builder",
-    url: "https://resume-builder-comp.vercel.app/",
-    altText: "resume-builder",
-    projectImage: "/assests/projects/resume-builder.png",
-  }
-]
-
+    {
+      subtitle: "Project 05",
+      title: "Resume Builder",
+      _id: 4,
+      projectContent: "Dynamic Resume Builder",
+      url: "https://resume-builder-comp.vercel.app/",
+      altText: "resume-builder",
+      projectImage: "/assests/projects/resume-builder.png",
+    },
+  ];
 
   return (
     <LayoutWrapper>
       <section className=" body-font mb-5" id="projects">
         <div className="  pt-20 pb-16 mx-auto">
-          <div className="flex flex-col text-center w-full mb-16" data-aos="fade-up">
+          <div
+            className="flex flex-col text-center w-full mb-16"
+            data-aos="fade-up"
+          >
             <h1 className="text-textColor font-bold text-4xl sm:text-5xl text-center ">
               My Projects
             </h1>
@@ -77,7 +86,12 @@ export const Projects = () => {
           <div className="grid grid-cols-[98%] sm:grid-cols-2 md:grid-cols-3 mx-auto gap-4 justify-center">
             {projects.map((project: ProjectData, i: number) => {
               return (
-                <div className="cursor-pointer " key={i} data-aos="fade-up" data-aos-delay={(project._id * 100) + 100}>
+                <div
+                  className="cursor-pointer "
+                  key={i}
+                  data-aos="fade-up"
+                  data-aos-delay={project._id * 100 + 100}
+                >
                   <div className="flex relative h-full shadow-xl transition-all hover:scale-105 duration-200 ">
                     <Image
                       alt={project.altText}
