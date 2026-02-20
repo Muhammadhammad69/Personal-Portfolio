@@ -38,7 +38,7 @@ export const Navbar = () => {
   };
  
   return (
-    <div className="w-[95%] 2xl:w-[1400px] mx-auto z-50 sticky top-0 bg-white rounded-bl-lg rounded-br-lg">
+    <div className="w-[95%] 2xl:w-[1400px] mx-auto z-50 sticky top-0 bg-white rounded-bl-lg rounded-br-lg shadow-md">
       <nav className="bg-white px-3 rounded-bl-lg rounded-br-lg font-medium text-textColor ">
         <div className="z-50">
           <div className="flex justify-between items-center h-16">
